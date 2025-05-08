@@ -1,0 +1,4 @@
+numpy
+h5py
+tqdm
+open3d
