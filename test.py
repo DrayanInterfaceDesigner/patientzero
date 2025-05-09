@@ -9,7 +9,7 @@ from model.vae import PointVAE
 # Configurações
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 MODEL_PATH = "best_vae_model.pth"
-OUTPUT_DIR = "data/out"
+OUTPUT_DIR = "data/out/true_destruction"
 NUM_SAMPLES = 10  # Número de exemplos a serem salvos
 
 def save_pcd(pcd_array, filename):
@@ -32,7 +32,7 @@ def main():
         root_dir="data/modelnet40_ply_hdf5_2048",
         file_list="test_files.txt",
         mode='encoder',
-        corruption_rate=0.6
+        # corruption_rate=0.6
     )
     
     test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)

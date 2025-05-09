@@ -13,7 +13,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Usando dispositivo: {DEVICE}")
 
 # Hiperparâmetros
-BATCH_SIZE = 64
+BATCH_SIZE = 64//4
 LATENT_DIM = 256
 EPOCHS = 200
 LEARNING_RATE = 1e-4
@@ -32,6 +32,7 @@ def main():
         mode='encoder',
         # corruption_rate=CORRUPTION_RATE
     )
+    # train_dataset.save_corrupted_data()
 
     train_loader = DataLoader(
         train_dataset,
